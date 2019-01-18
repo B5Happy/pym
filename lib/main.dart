@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flare_flutter/flare_actor.dart';
 import 'address.dart';
 import 'colors.dart';
+import 'agenda.dart';
 
 //void main() => runApp(MyApp());
 void main() {
@@ -16,7 +16,7 @@ void main() {
 const name = 'Py-Coders';
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -66,12 +66,6 @@ Widget titleSection = Container(
           ],
         ),
       ),
-      /*3*/
-      /*Icon(
-        Icons.star,
-        color: Colors.red[500],
-      ),
-      Text('41'),*/
     ],
   ),
 );
@@ -97,7 +91,7 @@ Widget buttonSection(BuildContext con) {
       children: [
         RaisedButton(
           child: Text("Where?"),
-          //color: Colors.blueAccent,
+          color: Colors.blueAccent,
           onPressed: () {
             Navigator.push(
               con,
@@ -106,72 +100,18 @@ Widget buttonSection(BuildContext con) {
           },
         ),
         RaisedButton(
-          child: Text("Where?"),
+          child: Text("Agenda"),
           color: Colors.blueAccent,
           onPressed: () {
             Navigator.push(
               con,
-              MaterialPageRoute(builder: (context) => GApp()),
+              MaterialPageRoute(builder: (context) => Agenda()),
             );
           },
         )
       ],
     ),
   );
-}
-
-class MyHomePage extends StatelessWidget {
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        //child:Text("Hello"),
-        child: FlareActor(
-          "assets/home.flr",
-          //animation: "circular",
-          //fit: BoxFit.cover
-          //fit: BoxFit.fitHeight,
-          fit: BoxFit.fitWidth,
-          //color: Colors.black,
-        ),
-      ),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.grey,
-        appBar: AppBar(title: Text("Home")),
-        body: new Stack(children: [
-          Positioned.fill(
-              child: FlareActor(
-            "assets/home.flr",
-            alignment: Alignment.center,
-            fit: BoxFit.cover,
-            animation: "walk",
-          )),
-
-          //));
-        ]));
-  }
-}
-
-class GGPage extends StatefulWidget {
-  @override
-  _GGPageState createState() => new _GGPageState();
-}
-
-class _GGPageState extends State<GGPage> {
-  @override
-  Widget build(BuildContext context) {
-    return new FlareActor(
-      "assets/home.flr",
-      fit: BoxFit.cover,
-      animation: "idle",
-    );
-  }
 }
 
 final ThemeData _myTheme = _buildTheme();
