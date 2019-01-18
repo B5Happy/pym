@@ -16,7 +16,6 @@ void main() {
 const name = 'Py-Coders';
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,12 +24,16 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Flutter App'),
         ),
-        body: Column(
+        backgroundColor: Colors.grey[100],
+        body: ListView(
           children: [
+            photoSection,
             titleSection,
             textSection,
             buttonSection(context),
           ],
+
+          
         ),
       ),
     );
@@ -39,7 +42,6 @@ class MyApp extends StatelessWidget {
 
 Widget titleSection = Container(
   padding: const EdgeInsets.all(32.0),
-  
   child: Row(
     children: [
       Expanded(
@@ -59,7 +61,7 @@ Widget titleSection = Container(
             Text(
               'Presented by ' + name,
               style: TextStyle(
-                color: Colors.grey[500],
+                color: Colors.grey,
                 fontSize: 16,
               ),
             ),
@@ -74,14 +76,22 @@ Widget textSection = Container(
   //padding: const EdgeInsets.all(32.0),
   padding: const EdgeInsets.fromLTRB(32.0, 5.0, 32.0, 32.0),
   child: Text(
-    'Hello, Vanakam to evryone to this first ever meetup by Py-Coder. '
-        'Py-Coder is a group of developers/coders based in Pondichery. '
+    'Hello, Vanakam to evryone to this first ever meetup by ' + name + '. ' + name +
+        ' is a group of developers/coders based in Pondichery. '
         'Who are passioned of technologie and would love to share it. '
         'This meetup will talk about flutter. '
         'Feel free to join the group in the meetup page '
         'and answer the quiz to help us inprove in the futur.',
     softWrap: true,
   ),
+);
+
+Widget photoSection = 
+Image.asset(
+  'assets/images/flutter_img2.png',
+  width: 600.0,
+  height: 200.0,//240
+  fit: BoxFit.cover,
 );
 
 Widget buttonSection(BuildContext con) {
@@ -92,6 +102,7 @@ Widget buttonSection(BuildContext con) {
         RaisedButton(
           child: Text("Where?"),
           color: Colors.blueAccent,
+          shape: StadiumBorder(),
           onPressed: () {
             Navigator.push(
               con,
@@ -102,6 +113,7 @@ Widget buttonSection(BuildContext con) {
         RaisedButton(
           child: Text("Agenda"),
           color: Colors.blueAccent,
+          shape: StadiumBorder(),
           onPressed: () {
             Navigator.push(
               con,
@@ -113,7 +125,7 @@ Widget buttonSection(BuildContext con) {
     ),
   );
 }
-
+/*
 final ThemeData _myTheme = _buildTheme();
 
 ThemeData _buildTheme() {
@@ -153,3 +165,4 @@ TextTheme _buildTextTheme(TextTheme base) {
         bodyColor: primaryVC,
       );
 }
+*/
