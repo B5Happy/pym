@@ -24,7 +24,11 @@ class _GAppState extends State<GApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+      fontFamily: 'Indie',
+      ),
       home: Scaffold(
+        
         appBar: AppBar(
           leading: IconButton(
             icon: const Icon(

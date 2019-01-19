@@ -5,6 +5,9 @@ class Agenda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+      fontFamily: 'Indie',
+      ),
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(

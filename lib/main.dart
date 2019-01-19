@@ -10,6 +10,9 @@ void main() {
     title: name,
     home: MyApp(),
     //theme: _myTheme,
+    theme: ThemeData(
+      fontFamily: 'Indie',
+  )
   ));
 }
 
@@ -20,6 +23,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: name,
+      theme: ThemeData(
+      fontFamily: 'Indie',
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Flutter App'),
@@ -83,6 +89,7 @@ Widget textSection = Container(
         'Feel free to join the group in the meetup page '
         'and answer the quiz to help us inprove in the futur.',
     softWrap: true,
+    //style: TextStyle(fontFamily: 'Rubik'),
   ),
 );
 
@@ -90,7 +97,7 @@ Widget photoSection =
 Image.asset(
   'assets/images/flutter_img2.png',
   width: 600.0,
-  height: 200.0,//240
+  height: 240.0,
   fit: BoxFit.cover,
 );
 
