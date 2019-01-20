@@ -108,7 +108,7 @@ Widget buttonSection(BuildContext con) {
       children: [
         RaisedButton(
           child: Text("Where?"),
-          color: Colors.blueAccent,
+          color: primaryVC ,
           shape: StadiumBorder(),
           onPressed: () {
             Navigator.push(
@@ -119,7 +119,7 @@ Widget buttonSection(BuildContext con) {
         ),
         RaisedButton(
           child: Text("Agenda"),
-          color: Colors.blueAccent,
+          color: primaryVC ,
           shape: StadiumBorder(),
           onPressed: () {
             Navigator.push(
